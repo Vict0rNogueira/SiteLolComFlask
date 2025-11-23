@@ -10,4 +10,8 @@ def home():
 def campeões():
     return render_template("campeões.html")
 
+@app.route('/Kayn.html')
+def Kayn():
+    return render_template("Kayn.html")
+
 app.run()

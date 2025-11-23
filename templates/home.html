@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
-    crossorigin="anonymous"></script>
+        <title>{% block title %}Document{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="">
     <title>Guia Para LeagueOfLegends</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1 class = "Guia">
+    <h1 class="guia">
         GUIA PARAR INICIANTES EM LEAGUE OF LEGENDS
 
     </h1>
-    <h2 class = "Introdução">
+    <h2 class="Introdução">
         Neste site estaremos compartilhando as principais dicas para iniciantes
         no jogo league of legends, aprendendo do basico da movimentação até
         recursos mais avaçados como matchups e micro/macro game
@@ -25,14 +28,15 @@
     <div class="card" style="width: 18rem;">
 <img src="{{ url_for('static', filename='img/FotoJinx.webp') }}"
      class="card-img-top"
-     style="width:100%; height:200px; object-fit:cover; display:block;"
+     style= "width:100%"; height:200px; object-fit:cover; display:block;
      alt="Jinx">
 
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Campeões</p>
+    <h5 class="card-title">Campeões</h5>
+    <p class="card-text">Habilidades|Builds|Matchups</p>
     <a href="campeões.html" class="btn btn-primary">Acessar</a>
   </div>
 </div>
+{% block content %}{% endblock %}
 </body>
 </html>

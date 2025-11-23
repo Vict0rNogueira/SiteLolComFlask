@@ -1,0 +1,11 @@
+.card {
+    color: purple;
+}
+
+.Photo{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+} 
+
