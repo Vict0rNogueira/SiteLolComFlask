@@ -1,42 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}Document{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="">
-    <title>Guia Para LeagueOfLegends</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1 class="guia">
-        GUIA PARAR INICIANTES EM LEAGUE OF LEGENDS
+{% extends "base.html" %}
 
-    </h1>
-    <h2 class="Introdução">
-        Neste site estaremos compartilhando as principais dicas para iniciantes
-        no jogo league of legends, aprendendo do basico da movimentação até
-        recursos mais avaçados como matchups e micro/macro game
-    </h2>
-    <h2 class = "Selecionar Card">
-        Selecione um tópico que deseja começar a aprender:
-    </h2>
+{% block title %}Home{% endblock %}
+{% block page_title %}Guia Para Iniciantes em League of Legends{% endblock %}
 
-    <div class="card" style="width: 18rem;">
-<img src="{{ url_for('static', filename='img/FotoJinx.webp') }}"
-     class="card-img-top"
-     style= "width:100%"; height:200px; object-fit:cover; display:block;
-     alt="Jinx">
+{% block content %}
 
-  <div class="card-body">
-    <h5 class="card-title">Campeões</h5>
-    <p class="card-text">Habilidades|Builds|Matchups</p>
-    <a href="campeões.html" class="btn btn-primary">Acessar</a>
-  </div>
+<h2 class="Introdução">
+    Neste site estaremos compartilhando as principais dicas para iniciantes
+</h2>
+
+<h2>Selecione um tópico:</h2>
+
+<div class="card champ-card" style="width: 18rem;">
+    <img src="{{ url_for('static', filename='img/FotoJinx.webp') }}"
+         class="card-img-top" style="object-fit: cover; height: 200px;">
+    <div class="card-body">
+        <h5 class="card-title">Campeões</h5>
+        <p class="card-text">Habilidades | Builds | Matchups</p>
+        <a href="{{ url_for('campeoes') }}" class="btn btn-primary">Acessar</a>
+    </div>
 </div>
-{% block content %}{% endblock %}
-</body>
-</html>
+
+
+{% endblock %}

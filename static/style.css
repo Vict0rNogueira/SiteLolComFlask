@@ -1,6 +1,12 @@
-.card {
-    color: purple;
+.champ-card {
+    color: purple; 
 }
+
+.Introdução {
+    margin-bottom: 20px;
+}
+
+
 
 .Photo{
     height: 500px;
@@ -8,4 +14,12 @@
     object-fit: cover;
     display: block;
 } 
+
+
+.page-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+}
 
