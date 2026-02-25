@@ -1,18 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Campeões{% endblock %}
-{% block page_title %}Campeões{% endblock %}
-
 {% block content %}
 
-<div class="card" style="width: 18rem;">
-    <img src="{{ url_for('static', filename='img/Kayn.jpeg') }}"
-         class="card-img-top" style="object-fit: cover; height: 200px;">
-    <div class="card-body">
-        <h5 class="Titulo">Kayn</h5>
-        <p class="card-text">O ceifador das sombras</p>
-        <a href="Kayn.html" class="btn btn-primary">Acessar</a>
+<div class="row">
+{% for key, c in campeoes.items() %}
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img src="{{ url_for('static', filename=c.imagem) }}"
+                 class="card-img-top"
+                 style="object-fit: cover; height: 200px;">
+            <div class="card-body">
+                <h5>{{ c.nome }}</h5>
+                <p>{{ c.titulo }}</p>
+                <a href="{{ url_for('pagina_campeao', nome=key) }}"
+                   class="btn btn-primary">
+                   Ver Campeão
+                </a>
+            </div>
+        </div>
     </div>
+{% endfor %}
 </div>
 
 {% endblock %}
