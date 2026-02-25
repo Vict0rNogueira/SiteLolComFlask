@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ campeao.nome }}{% endblock %}
+
+{% block content %}
+
+<section style="background-color: #0f0f1a; color: white; padding: 60px 0;">
+    <div class="container text-center">
+
+        <h1 style="font-size: 4rem;">{{ campeao.nome }}</h1>
+        <h3 style="font-style: italic; color: gold;">
+            {{ campeao.titulo }}
+        </h3>
+
+        <img src="{{ url_for('static', filename=campeao.imagem) }}"
+             style="width: 80%; max-width: 800px; margin: 40px 0;">
+
+        <p style="max-width: 800px; margin: auto;">
+            {{ campeao.descricao }}
+        </p>
+
+    </div>
+</section>
+
+<section class="container mt-5">
+    <h2>História</h2>
+    <p>{{ campeao.historia }}</p>
+
+    <hr>
+
+    <h3>Classe</h3>
+    <p>{{ campeao.classe }}</p>
+
+    <h3>Dificuldade</h3>
+    <p>{{ campeao.dificuldade }}</p>
+</section>
+
+{% endblock %}
